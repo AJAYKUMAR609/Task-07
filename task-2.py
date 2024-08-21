@@ -36,7 +36,6 @@ class CountryInfo:
 
     def filter_by_currency(self, currency_code):
         filtered_countries = [country for country in self.data if any(
-            # Check if currency is a dictionary and has a "code" attribute
             isinstance(currency, dict) and currency.get("code") == currency_code
             for currency in country.get("currencies", [])
         )]
